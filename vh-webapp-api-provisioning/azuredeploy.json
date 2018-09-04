@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "_artifactsLocation": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/hmcts/vh-arm-templates/master/vh-arm-templates"
+    },
+    "keyVaultName": {
+      "type": "string"
+    },
+    "objectId": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "KeyVaultTemplateFolder": "AzureKeyVault",
+    "KeyVaultTemplateFileName": "azuredeploy.json",
+    "KeyVaultTemplateParametersFileName": "azuredeploy.parameters.json"
+  },
+  "resources": [
+    {
+      "name": "KeyVault",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2017-05-10",
+      "dependsOn": [],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('_artifactsLocation'), '/', variables('KeyVaultTemplateFolder'), '/', variables('KeyVaultTemplateFileName'))]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "keyVaultName": "[parameters('keyVaultName')]",
+          "objectId": "[parameters('keyVaultName')]"
+        }
+      }
+    }
+  ],
+  "outputs": {
+  }
+}

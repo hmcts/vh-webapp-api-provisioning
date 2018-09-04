@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "_artifactsLocation": {
+      "value": "https://raw.githubusercontent.com/hmcts/vh-arm-templates/master/vh-arm-templates"
+    },
+    "keyVaultName": {
+      "value": "key-vault-name"
+    },
+    "objectId": {
+      "value": "a34a07c2-8526-4461-bca2-4a7eac3a9487"
+    }
+  }
+}
