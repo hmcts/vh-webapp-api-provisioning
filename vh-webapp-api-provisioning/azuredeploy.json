@@ -31,8 +31,8 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "keyVaultName": "[parameters('keyVaultName')]",
-          "objectId": "[parameters('keyVaultName')]"
+          "keyVaultName": { "value": "[parameters('keyVaultName')]" },
+          "objectId": { "value": "[parameters('objectId')]" }
         }
       }
     }
